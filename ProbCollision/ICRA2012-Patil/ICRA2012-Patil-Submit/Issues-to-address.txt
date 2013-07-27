@@ -1,0 +1,48 @@
+Estimating Probability of Collision for Safe Planning under Gaussian Motion and Sensing Uncertainty
+
+Reviewer concerns:
+
+(*) The authors want to estimate the number of collision-free Monte-Carlo simulations without actually executing these simulations. Any collision along a plan renders the whole plan invalid; this is different from the collision status of the consecutive states along a plan. This idea is not clearly presented and should be elaborated upon in the paper.
+
+-- The introduction does not provide any intuition about how one would solve this problem if one were unaware of LQG-MP and similar approaches. The introduction should be fixed to first talk about naive sampling based strategies, then talk about quantifying uncertainty using Gaussians, and then talk about why the problem is difficult because the probabilities of collision at each stage are conditioned on the previous stage being collision-free.
+
+(*) The use of LQG-MP hinders the clarity of the paper. Since the actual method used for estimation is marginal to the contribution of the paper, leaving out LQG-MP details or using a more established Kalman filtering method would improve the paper.
+
+-- This is true to some extent, but it is unreasonable to estimate the Gaussian uncertainty using just a Kalman filter as it would quickly blow up without any sort of feedback. We do mention that our approach would work with any linear control policy, but it needs to be abstracted away somehow.
+
+(*) The appendix talks about conditioning on a distribution, which needs to be clarified.
+
+-- This was an error on my part. The appendix gives the conditional distribution for a random vector and not a distribution, as incorrectly mentioned.
+
+(*) Mean and covariance computations are performed independently for each linear constraint, but does this guarantee that oscillations would not occur?
+
+-- Oscillations would occur if the order-dependent truncation is used, but would not occur with what we do. The computation returns a single, consistent mean (and covariance).
+
+(*) The local convexification of free space is only possible in 2D/3D environments, and does not generalize to higher dimensional C-spaces, since an explicit representation of C-space geometry is not available.
+
+-- We will have to defer this to future work.
+
+(*) The experiments use 10000 Monte-Carlo simulations for estimating the probability of collision, but it probably suffices to use a 100, or 1000 samples to get a reasonable estimate. This would drastically cut down on the computation times and significantly reduce the advantage of the proposed method.
+
+-- As discussed, we plan to include statistics that relate how the number of Monte-Carlo samples relates to the collision probability ground truth. The idea currently is to use multiple Monte-Carlo runs to arrive within the threshold of our method and then report how many Monte-Carlo runs would be needed to achieve this 95-98% of the time, and then report timing statistics for these experiments.
+
+(*) This work seems to be an incremental extension to the author's prior work, and overall it seems to be a relatively simple extension to Kalman filtering to account for constraints.
+
+-- The last paragraph in the current related work section clearly distances our work from prior work in the filtering community, but the reviewer still felt that this was a pretty standard approach and was surprised that something did not already exist for filtering in domains with state constraints. I do not know how to best address this issue of novelty of our work.
+
+(*) All estimation methods, including ours, provide conservative bounds for the collision probability -- this is not true since Monte-Carlo sampling is unbiased.
+
+-- This was an error and I did not mean to include Monte-Carlo methods when I wrote that statement, but I will rectify this in the final version.
+
+(*) The method proposed in the paper only works for Gaussian noise models, but how would it generalize to non-Gaussian noise models? This limits its applicability in the real world.
+
+-- We will have to defer this to future work. Brute-force Monte-Carlo sampling is always an option when it comes to non-Gaussian noise models.
+
+Other concerns:
+
+(*) Cut down paper text from 8 pages to 7 pages.
+
+-- Shrink figures
+-- Cut down on analysis in the results section (while keeping in mind that additional analysis would be added for the Monte-Carlo sampling)
+-- Cut down on problem statement section and introductory text in the method section.
+-- Shrink introduction and related work (to fit in 1.5 pages?)

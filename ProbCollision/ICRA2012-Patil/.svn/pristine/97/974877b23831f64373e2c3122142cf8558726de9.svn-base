@@ -1,0 +1,23 @@
+\appendix[Truncated Gaussian Distributions]
+
+Given a distribution $Y' \sim \mathcal{N}[\mu'_Y, \Sigma'_Y]$ and a joint Gaussian distribution $(X,Y)$:
+\begin{equation} \label{eq:jointdist}
+(X, Y) \sim \mathcal{N}\Bigg[\begin{bmatrix} \mu_X \\ \mu_Y \end{bmatrix}, \begin{bmatrix} \Sigma_X & \Sigma_{XY} \\ \Sigma_{YX} & \Sigma_Y \end{bmatrix}\Bigg],
+\end{equation}
+the conditional distribution $(X | Y = Y')$ can be derived using the law of iterated expectations and the law of total variances, and is given by \cite{Movellan11_Tutorial}:
+\begin{equation} \label{eq:conditional}
+(X | Y = Y') \sim \mathcal{N}[\mu_X - L(\mu_Y - \mu'_Y), \Sigma_X - L(\Sigma_Y - \Sigma'_Y)L^T]
+\end{equation}
+where $L = \Sigma_{XY}\Sigma^{-1}_Y$.
+
+We can construct the joint distribution of the conditional distribution $\mathbf{y}_{t|t-1} \sim \mathcal{N}[\hat{\mathbf{y}}_{t|t-1}, R_{t|t-1}]$, and the transformed 1D distribution $y^i_{t|t-1} \sim \mathcal{N}[\tilde{\mathbf{a}}_i^T\hat{\mathbf{y}}_{t|t-1}, \tilde{\mathbf{a}}_i^T R_{t|t-1} \tilde{\mathbf{a}}_i]$, according to Eqn. (\ref{eq:jointdist}) as:
+\begin{equation}
+(\mathbf{y}_{t|t-1}, y^i_{t|t-1}) \sim \mathcal{N}\Bigg[\begin{bmatrix} \hat{\mathbf{y}}_{t|t-1} \\ \tilde{\mathbf{a}}_i^T\hat{\mathbf{y}}_{t|t-1} \end{bmatrix}, \begin{bmatrix} R_{t|t-1} & R_{t|t-1} \tilde{\mathbf{a}}_i \\ \tilde{\mathbf{a}}_i^T R_{t|t-1} & \tilde{\mathbf{a}}_i^T R_{t|t-1} \tilde{\mathbf{a}}_i \end{bmatrix}\Bigg].
+\end{equation}
+
+Using Eqn. (\ref{eq:conditional}), we reconstruct the truncated mean and variance of the joint distribution by conditioning on the truncated 1D distribution $y^i_{t|t} \sim \mathcal{N}[\mu_i, \sigma_i^2]$ (Eqn.\ \ref{eq:1DtruncMu}, \ref{eq:1DtruncSigma}), according to:
+\begin{align}
+&(\mathbf{y}_{t|t-1} | y^i_{t|t-1} = y^i_{t|t}) \sim \nonumber \\
+&\mathcal{N}[\hat{\mathbf{y}}_{t|t-1} - L(\tilde{\mathbf{a}}_i^T\hat{\mathbf{y}}_{t|t-1} - \mu_i), R_{t|t-1} - L(\tilde{\mathbf{a}}_i^T R_{t|t-1} \tilde{\mathbf{a}}_i - \sigma_i^2)L^T],
+\end{align}
+where $L = \frac{R_{t|t-1} \tilde{\mathbf{a}}_i}{ \tilde{\mathbf{a}}_i^T R_{t|t-1} \tilde{\mathbf{a}}_i}$, which is exactly as in Eqns. (\ref{eq:truncmean}, \ref{eq:truncvar}). 

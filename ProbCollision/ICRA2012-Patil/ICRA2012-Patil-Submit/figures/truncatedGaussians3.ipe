@@ -1,0 +1,630 @@
+<?xml version="1.0"?>
+<!DOCTYPE ipe SYSTEM "ipe.dtd">
+<ipe version="70010" creator="Ipe 7.0.10">
+<info created="D:20110724094409" modified="D:20110915081007"/>
+<ipestyle name="basic">
+<symbol name="arrow/arc(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/farc(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="mark/circle(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+0.4 0 0 0.4 0 0 e
+</path>
+</symbol>
+<symbol name="mark/disk(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+</path>
+</symbol>
+<symbol name="mark/fdisk(sfx)" transformations="translations">
+<group>
+<path fill="sym-stroke" fillrule="eofill">
+0.6 0 0 0.6 0 0 e
+0.4 0 0 0.4 0 0 e
+</path>
+<path fill="sym-fill">
+0.4 0 0 0.4 0 0 e
+</path>
+</group>
+</symbol>
+<symbol name="mark/box(sx)" transformations="translations">
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+</symbol>
+<symbol name="mark/square(sx)" transformations="translations">
+<path fill="sym-stroke">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+</path>
+</symbol>
+<symbol name="mark/fsquare(sfx)" transformations="translations">
+<group>
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+<path fill="sym-fill">
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="mark/cross(sx)" transformations="translations">
+<group>
+<path fill="sym-stroke">
+-0.43 -0.57 m
+0.57 0.43 l
+0.43 0.57 l
+-0.57 -0.43 l
+h
+</path>
+<path fill="sym-stroke">
+-0.43 0.57 m
+0.57 -0.43 l
+0.43 -0.57 l
+-0.57 0.43 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="arrow/fnormal(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/pointed(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/fpointed(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/linear(spx)">
+<path stroke="sym-stroke" pen="sym-pen">
+-1 0.333 m
+0 0 l
+-1 -0.333 l
+</path>
+</symbol>
+<symbol name="arrow/fdouble(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+-1 0 m
+-2 0.333 l
+-2 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/double(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+-1 0 m
+-2 0.333 l
+-2 -0.333 l
+h
+</path>
+</symbol>
+<pen name="heavier" value="0.8"/>
+<pen name="fat" value="1.2"/>
+<pen name="ultrafat" value="1.8"/>
+<symbolsize name="large" value="5"/>
+<symbolsize name="small" value="2"/>
+<symbolsize name="tiny" value="1.1"/>
+<arrowsize name="large" value="10"/>
+<arrowsize name="small" value="5"/>
+<arrowsize name="tiny" value="3"/>
+<color name="red" value="1 0 0"/>
+<color name="green" value="0 1 0"/>
+<color name="blue" value="0 0 1"/>
+<color name="yellow" value="1 1 0"/>
+<color name="orange" value="1 0.647 0"/>
+<color name="gold" value="1 0.843 0"/>
+<color name="purple" value="0.627 0.125 0.941"/>
+<color name="gray" value="0.745"/>
+<color name="brown" value="0.647 0.165 0.165"/>
+<color name="navy" value="0 0 0.502"/>
+<color name="pink" value="1 0.753 0.796"/>
+<color name="seagreen" value="0.18 0.545 0.341"/>
+<color name="turquoise" value="0.251 0.878 0.816"/>
+<color name="violet" value="0.933 0.51 0.933"/>
+<color name="darkblue" value="0 0 0.545"/>
+<color name="darkcyan" value="0 0.545 0.545"/>
+<color name="darkgray" value="0.663"/>
+<color name="darkgreen" value="0 0.392 0"/>
+<color name="darkmagenta" value="0.545 0 0.545"/>
+<color name="darkorange" value="1 0.549 0"/>
+<color name="darkred" value="0.545 0 0"/>
+<color name="lightblue" value="0.678 0.847 0.902"/>
+<color name="lightcyan" value="0.878 1 1"/>
+<color name="lightgray" value="0.827"/>
+<color name="lightgreen" value="0.565 0.933 0.565"/>
+<color name="lightyellow" value="1 1 0.878"/>
+<dashstyle name="dashed" value="[4] 0"/>
+<dashstyle name="dotted" value="[1 3] 0"/>
+<dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
+<dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
+<textsize name="large" value="\large"/>
+<textsize name="small" value="\small"/>
+<textsize name="tiny" value="\tiny"/>
+<textsize name="Large" value="\Large"/>
+<textsize name="LARGE" value="\LARGE"/>
+<textsize name="huge" value="\huge"/>
+<textsize name="Huge" value="\Huge"/>
+<textsize name="footnote" value="\footnotesize"/>
+<textstyle name="center" begin="\begin{center}" end="\end{center}"/>
+<textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
+<textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
+<gridsize name="4 pts" value="4"/>
+<gridsize name="8 pts (~3 mm)" value="8"/>
+<gridsize name="16 pts (~6 mm)" value="16"/>
+<gridsize name="32 pts (~12 mm)" value="32"/>
+<gridsize name="10 pts (~3.5 mm)" value="10"/>
+<gridsize name="20 pts (~7 mm)" value="20"/>
+<gridsize name="14 pts (~5 mm)" value="14"/>
+<gridsize name="28 pts (~10 mm)" value="28"/>
+<gridsize name="56 pts (~20 mm)" value="56"/>
+<anglesize name="90 deg" value="90"/>
+<anglesize name="60 deg" value="60"/>
+<anglesize name="45 deg" value="45"/>
+<anglesize name="30 deg" value="30"/>
+<anglesize name="22.5 deg" value="22.5"/>
+<tiling name="falling" angle="-60" step="4" width="1"/>
+<tiling name="rising" angle="30" step="4" width="1"/>
+</ipestyle>
+<ipestyle name="transparency">
+<opacity name="50%" value="0.5"/>
+</ipestyle>
+<page>
+<layer name="alpha"/>
+<view layers="alpha" active="alpha"/>
+<path layer="alpha" matrix="0.340963 0.653862 -0.286886 0.164257 564.772 303.088" stroke="black" fill="darkgray" opacity="50%">
+46.6368 0 0 46.6368 96.3282 359.363 e
+</path>
+<path matrix="0.733846 0 0 0.990714 105.325 14.1852" stroke="black" fill="gold">
+210.193 521.409
+210.193 499.351
+209.493 429.326
+223.848 422.323
+285.121 425.474
+337.64 428.626
+408.716 433.877
+469.288 437.379
+485.044 433.877
+477.341 457.686
+486.094 500.052
+482.593 520.359
+467.887 524.21
+424.471 506.354
+375.804 519.309
+328.887 503.903
+243.806 513.356 u
+</path>
+<path matrix="-0.167283 0.837168 -0.432882 -0.0385743 580.139 362.435" stroke="black" fill="darkgray" opacity="50%">
+46.6368 0 0 46.6368 96.3282 359.363 e
+</path>
+<path matrix="-0.723847 0 0 -0.985654 552.597 790.588" stroke="black" fill="gold">
+210.193 521.409
+210.193 499.351
+209.493 429.326
+223.848 422.323
+285.121 425.474
+337.64 428.626
+408.716 433.877
+469.288 437.379
+485.044 433.877
+477.341 457.686
+486.094 500.052
+482.593 520.359
+467.887 524.21
+424.471 506.354
+375.804 519.309
+328.887 503.903
+243.806 513.356 u
+</path>
+<path matrix="-0.334379 0.983129 -0.425223 -0.119627 519.297 350.547" stroke="black" fill="darkgray" opacity="50%">
+46.6368 0 0 46.6368 96.3282 359.363 e
+</path>
+<path matrix="-0.251839 0.8066 -0.387043 -0.0793797 422.951 325.139" stroke="black" fill="darkgray" opacity="50%">
+46.6368 0 0 46.6368 96.3282 359.363 e
+</path>
+<path matrix="0.273246 0.649667 -0.294322 0.127878 253.266 263.979" stroke="black" fill="darkgray" opacity="50%">
+46.6368 0 0 46.6368 96.3282 359.363 e
+</path>
+<path matrix="0.262779 0.438599 -0.194484 0.179007 535.028 309.305" stroke="black" pen="ultrafat">
+46.6368 0 0 46.6368 96.3282 359.363 e
+</path>
+<path matrix="-0.104067 0.507175 -0.339405 0.00969685 542.91 367.243" stroke="black" pen="ultrafat">
+46.6368 0 0 46.6368 96.3282 359.363 e
+</path>
+<path matrix="-0.220277 0.578454 -0.318787 -0.0747534 390.012 360.263" stroke="black" pen="ultrafat">
+46.6368 0 0 46.6368 96.3282 359.363 e
+</path>
+<path matrix="-0.21723 0.662361 -0.342246 -0.0619601 478.93 362.523" stroke="black" pen="ultrafat">
+46.6368 0 0 46.6368 96.3282 359.363 e
+</path>
+<use name="mark/fdisk(sfx)" pos="176.921 377.572" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="172.343 378.38" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="167.764 373.532" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="169.649 367.877" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="176.113 368.146" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="179.076 374.34" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="179.615 385.114" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="175.844 382.42" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="168.841 382.42" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="163.993 373.802" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="163.185 368.146" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="170.996 365.453" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="165.34 363.298" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="175.305 363.298" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="180.692 368.415" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="183.385 375.687" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="180.423 380.804" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="173.689 386.73" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="185.001 399.657" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="185.001 390.5" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="189.041 387.807" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="189.041 380.266" size="small" stroke="red" fill="red"/>
+<use matrix="1 0 0 1 -4.30927 -2.69329" name="mark/fdisk(sfx)" pos="183.924 361.951" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="176.113 355.487" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="167.225 349.562" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="162.916 356.565" size="small" stroke="red" fill="red"/>
+<use matrix="1 0 0 1 1.8853 1.07732" name="mark/fdisk(sfx)" pos="156.722 351.448" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="162.108 345.792" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="173.151 351.178" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="158.607 360.605" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="168.303 389.423" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="185.27 384.844" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="160.492 371.378" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="168.033 358.181" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="180.423 363.837" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="186.078 373.263" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="166.148 379.188" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="172.881 369.493" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="167.495 369.762" size="small" stroke="red" fill="red"/>
+<group>
+<use name="mark/fdisk(sfx)" pos="178.268 399.388" size="small" stroke="red" fill="red"/>
+</group>
+<group>
+<use name="mark/fdisk(sfx)" pos="177.46 393.463" size="small" stroke="red" fill="red"/>
+</group>
+<use name="mark/fdisk(sfx)" pos="258.528 378.919" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="253.949 375.687" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="255.565 370.301" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="261.491 370.031" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="265.531 373.532" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="262.568 377.572" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="254.219 383.767" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="250.717 379.727" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="250.717 370.031" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="254.488 365.453" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="243.715 384.844" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="245.062 392.655" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="250.987 400.465" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="246.408 406.391" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="260.144 399.388" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="249.371 394.54" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="256.643 390.77" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="264.723 390.77" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="270.378 383.228" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="273.072 372.994" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="269.301 368.415" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="245.6 366.53" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="245.6 374.61" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="243.176 378.65" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="249.64 387.538" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="241.56 401.273" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="260.144 386.73" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="262.568 381.882" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="267.416 379.727" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="333.671 406.929" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="329.362 402.081" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="331.785 394.271" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="340.943 395.617" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="336.364 395.348" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="341.481 400.196" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="338.519 406.929" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="330.17 408.815" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="335.825 391.039" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="328.284 392.924" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="270.109 374.071" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="265.261 383.498" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="326.13 414.74" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="321.551 405.313" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="316.703 415.278" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="322.628 423.358" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="321.551 431.708" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="315.895 430.092" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="319.127 438.979" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="328.554 443.019" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="320.743 443.289" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="330.977 435.748" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="326.399 430.092" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="336.903 423.628" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="334.748 418.51" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="341.751 417.164" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="350.639 403.428" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="352.524 394.54" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="352.524 388.346" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="345.252 381.612" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="336.364 381.074" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="328.015 383.498" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="319.396 391.578" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="316.164 399.927" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="313.74 411.508" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="339.057 369.223" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="347.137 368.415" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="350.639 379.727" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="343.097 375.418" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="344.175 393.194" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="338.788 391.039" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="342.289 387.538" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="333.401 386.46" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="323.975 400.465" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="326.399 404.236" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="325.322 408.545" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="320.743 411.508" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="336.095 413.663" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="334.479 411.239" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="340.673 409.892" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="343.636 402.351" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="346.329 396.964" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="346.06 413.393" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="339.596 430.361" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="331.785 426.59" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="346.599 389.692" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="330.977 389.692" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="338.788 383.498" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="349.023 384.844" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="336.903 376.764" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="264.184 369.223" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="258.259 365.991" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="266.339 365.722" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="255.565 408.007" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="168.572 378.38" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="171.804 382.151" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="182.039 372.455" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="172.073 361.143" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="161.57 364.645" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="409.891 433.862" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="404.504 432.516" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="405.043 426.59" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="408.814 425.513" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="414.47 427.129" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="414.47 432.516" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="406.12 438.171" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="401.542 434.67" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="401.272 429.284" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="403.158 423.358" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="411.507 422.012" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="416.893 426.052" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="415.816 437.902" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="412.046 436.555" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="408.814 440.326" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="399.656 440.865" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="397.771 436.286" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="397.232 431.438" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="399.387 421.742" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="405.043 420.126" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="410.968 417.972" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="416.355 420.126" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="422.819 422.82" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="418.509 428.206" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="418.509 433.862" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="415.008 442.481" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="409.891 445.443" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="404.235 443.558" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="401.811 447.867" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="396.424 452.985" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="393.193 446.79" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="404.774 458.102" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="397.502 462.95" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="412.584 453.523" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="406.12 451.099" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="417.971 450.561" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="392.385 436.555" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="393.731 429.553" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="394.808 421.742" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="396.694 415.278" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="404.504 410.969" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="400.464 406.121" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="406.12 401.273" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="413.662 394.54" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="424.704 400.196" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="416.085 407.199" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="426.859 411.508" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="426.589 424.436" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="414.47 414.74" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="409.083 413.124" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="405.043 416.086" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="401.003 418.78" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="399.656 415.009" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="407.198 410.7" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="412.584 409.084" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="417.971 413.663" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="422.011 418.51" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="421.203 413.932" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="415.277 402.081" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="419.587 395.887" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="422.549 405.852" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="331.516 397.503" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="253.411 359.258" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="256.912 350.101" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="261.491 360.605" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="257.72 361.682" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="268.493 361.682" size="normal" stroke="black" fill="black"/>
+<use matrix="1 0 0 1 1.07732 0.807987" name="mark/fdisk(sfx)" pos="271.725 365.453" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="272.802 356.565" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="261.491 356.026" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="270.109 342.56" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="266.339 349.832" size="normal" stroke="black" fill="black"/>
+<use matrix="1 0 0 1 -1.34665 0.538658" name="mark/fdisk(sfx)" pos="278.189 347.677" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="277.92 363.837" size="normal" stroke="black" fill="black"/>
+<use name="mark/fdisk(sfx)" pos="493.922 428.206" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="490.42 426.86" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="488.535 423.358" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="490.69 420.665" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="494.191 420.665" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="496.346 426.052" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="497.962 420.396" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="486.919 419.857" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="491.498 417.972" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="495.807 416.356" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="488.266 414.74" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="482.879 416.894" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="484.226 423.628" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="479.378 413.932" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="478.839 407.199" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="480.994 400.196" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="489.343 406.929" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="484.226 408.815" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="495.268 408.815" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="494.46 438.441" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="489.612 434.67" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="502.001 436.825" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="485.842 432.246" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="503.348 430.092" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="497.962 432.246" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="504.695 423.628" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="501.193 418.51" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="496.076 413.932" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="492.306 413.663" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="483.418 413.393" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="481.532 421.742" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="485.034 429.014" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="491.228 431.977" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="498.5 428.476" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="499.847 425.244" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="486.919 399.388" size="small" stroke="red" fill="red"/>
+<use name="mark/fdisk(sfx)" pos="343.636 409.084" size="small" stroke="red" fill="red"/>
+<text matrix="1 0 0 1 83.4919 -7.81052" transformations="translations" pos="245.6 487.728" stroke="black" type="label" valign="baseline" size="LARGE">\textrm{Obstacle}</text>
+<path matrix="1 0 0 1 40.1424 -168.947" fill="black">
+2.13346 0 0 2.13346 133.606 542.203 e
+</path>
+<path matrix="1 0 0 1 126.411 -167.82" fill="black">
+2.13346 0 0 2.13346 133.606 542.203 e
+</path>
+<path matrix="0.852349 0 0 0.783564 73.7988 99.7629" stroke="black" pen="fat" arrow="normal/large">
+41.8903 402.558 m
+119.405 332.144
+228.281 345.754
+368.518 416.168
+453.725 439.245
+566.151 374.748 s
+</path>
+<path matrix="1 0 0 1 201.46 -141.035" fill="black">
+2.13346 0 0 2.13346 133.606 542.203 e
+</path>
+<path matrix="1 0 0 1 276.076 -112.765" fill="black">
+2.13346 0 0 2.13346 133.606 542.203 e
+</path>
+<path matrix="1 0 0 1 359.953 -118.15" fill="black">
+2.13346 0 0 2.13346 133.606 542.203 e
+</path>
+<text matrix="1 0 0 1 174.364 -182.175" transformations="translations" pos="245.6 487.728" stroke="black" type="label" valign="baseline" size="LARGE">\textrm{Infeasible states}</text>
+<path matrix="4.13783 -0.0769549 0.22339 1.6674 -951.108 -220.56" stroke="black" pen="fat" arrow="normal/small">
+312.675 334.322 m
+276.315 352.906 l
+</path>
+<path matrix="0.705094 -1.64136 -2.35206 -0.57557 982.5 1018.77" stroke="black" pen="fat" arrow="normal/small">
+312.675 334.322 m
+276.315 352.906 l
+</path>
+<text matrix="1 0 0 1 -75.6269 -37.0867" transformations="translations" pos="245.6 487.728" stroke="black" type="label" valign="baseline" size="LARGE">\textrm{A Priori}</text>
+<text matrix="1 0 0 1 -91.9214 -55.1852" transformations="translations" pos="245.6 487.728" stroke="black" type="label" valign="baseline" size="LARGE">\textrm{distributions}</text>
+<path matrix="0.120161 0.71087 -0.400833 0.249278 296.438 122.872" stroke="black" pen="fat" arrow="normal/small">
+312.675 334.322 m
+276.315 352.906 l
+</path>
+<path matrix="-0.390865 1.71174 1.30385 0.600248 -113.715 -307.686" stroke="black" pen="fat" arrow="normal/small">
+312.675 334.322 m
+276.315 352.906 l
+</path>
+<path matrix="1 0 0 1 120.485 -154.354" stroke="black" fill="purple">
+2.13346 0 0 2.13346 133.606 542.203 e
+</path>
+<path matrix="-0.807435 -0.589957 0.589957 -0.807435 122.623 923.587" stroke="black" fill="purple">
+2.13346 0 0 2.13346 133.606 542.203 e
+</path>
+<path matrix="-0.807435 -0.589957 0.589957 -0.807435 199.65 937.322" stroke="black" fill="purple">
+2.13346 0 0 2.13346 133.606 542.203 e
+</path>
+<path matrix="-0.807435 -0.589957 0.589957 -0.807435 279.102 932.205" stroke="black" fill="purple">
+2.13346 0 0 2.13346 133.606 542.203 e
+</path>
+<text matrix="0.996742 0 0 1 191.469 -134.045" transformations="translations" pos="245.6 487.728" stroke="black" type="label" valign="baseline" size="LARGE">\textrm{Truncated}</text>
+<text matrix="1 0 0 1 181.717 -152.09" transformations="translations" pos="245.6 487.728" stroke="black" type="label" valign="baseline" size="LARGE">\textrm{distributions}</text>
+<path matrix="0.393913 -1.05714 -1.31401 -0.370704 775.504 824.391" stroke="black" pen="fat" arrow="normal/small">
+312.675 334.322 m
+276.315 352.906 l
+</path>
+<path matrix="-0.177773 -0.793919 0.593014 -0.278401 316.786 712.037" stroke="black" pen="fat" arrow="normal/small">
+312.675 334.322 m
+276.315 352.906 l
+</path>
+<use matrix="1 0 0 1 81.3371 12.1201" name="mark/fdisk(sfx)" pos="272.802 356.565" size="normal" stroke="black" fill="black"/>
+<use matrix="1 0 0 1 79.7206 7.00263" name="mark/fdisk(sfx)" pos="272.802 356.565" size="normal" stroke="black" fill="black"/>
+<use matrix="1 0 0 1 67.8696 6.73283" name="mark/fdisk(sfx)" pos="272.802 356.565" size="normal" stroke="black" fill="black"/>
+<text matrix="1 0 0 1 24.7405 -177.272" transformations="translations" pos="245.6 487.728" stroke="black" type="label" valign="baseline" size="LARGE">\textrm{Obstacle}</text>
+<path matrix="0.321664 0.622252 -0.242724 0.231045 230.291 229.372" stroke="black" pen="ultrafat">
+46.6368 0 0 46.6368 96.3282 359.363 e
+</path>
+</page>
+</ipe>

@@ -1,0 +1,33 @@
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=240pt,clip]{figures/convexification.pdf}
+\end{center}
+\vspace*{-10pt}
+\caption{We transform the environment such that the distribution of the robot position (left) is converted to a unit sphere (right). We then sequentially process the obstacle geometry in increasing order of distance from the origin. The linear constraints that define a locally convex region of the free space are determined by the normal to the vector of closest approach (shown in red). The locally convex region constructed using our approach for this example is defined by three constraints determined in order of their indices: $C_1$, $C_2$, and $C_3$.
+\vspace*{-10pt}}
+\label{fig:convexification}
+\end{figure}
+
+We extend our analysis to non-convex regions by truncating the joint conditional distributions with respect to linear constraints that define a locally convex region of free space containing the robot. For the sake of simplicity, we assume that only the robot position is relevant for collision detection. At each stage $t$, we compute the marginal distribution $\mathcal{N}[\hat{\mathbf{p}}_{t|t-1}, \Sigma_{t|t-1}]$ of the conditional distribution $\mathcal{N}[\hat{\mathbf{y}}_{t|t-1} + \bigl[ \begin{smallmatrix} \mathbf{x}^{\star}_t \\ \mathbf{x}^{\star}_t \end{smallmatrix} \bigr], R_{t|t-1}]$ over the dimensions of the robot state that describe the robot position $\hat{\mathbf{p}}_{t|t-1}$. We outline a greedy method that computes a locally convex region of free space such that the probability that the distribution $\mathcal{N}[\hat{\mathbf{p}}_{t|t-1}, \Sigma_{t|t-1}]$ lies beyond the convex region is minimal.
+
+\begin{figure*}[!t]
+{\,} \hfill
+\subfigure[Test case for car-like robot\label{fig:1a}]{\includegraphics[width=100pt,clip]{figures/car2d/car2d-fig.pdf}}
+\hfill
+\subfigure[Zoom into narrow passage\label{fig:1b}]{\includegraphics[width=100pt,clip]{figures/car2d/plan1-closeup.png}}
+\hfill
+\subfigure[Comparison with Monte Carlo simulations\label{fig:1d}]{\begin{overpic}[width=180pt,clip]{figures/mc-car.pdf}\put(30,5){\tiny $t_{mc}$}\end{overpic}}
+\hfill
+\subfigure[Different start location\label{fig:1c}]{\includegraphics[width=100pt,clip]{figures/car2d/plan3.png}}
+{\,} \hfill
+\vspace*{-5pt}
+\caption{Car-like robot with second order dynamics: (a) The conditional distributions (black ellipses corresponding to $3$ standard deviations) computed using our method provide an accurate estimate of the distribution of the collision free robot states along the plan (shown by red dots), while the unconditional distributions (solid gray ellipses) are overly conservative. The probability of collision estimated by our method for this example is $68.9\%$, while the ground truth probability determined by Monte Carlo simulations is $67.3\%$. (b) Zoomed in view of the conditional distributions in the narrow corridor in the environment. The mean of the conditional distribution (magenta) deviates from the nominal plan due to the truncation of the distributions due to obstacle collisions. (c) Comparison of our method to Monte Carlo simulations. (d) Conditional and unconditional distributions computed along a second plan. The probability of collision estimated by our method for this example is $44.8\%$, while the ground truth probability is $42.3\%$.}
+\vspace*{-15pt}
+\label{fig:car2d}
+\end{figure*}
+
+Adopting the approach suggested in \cite{vandenBerg11_IJRR}, we linearly transform the environment geometry by applying the transform $U_t^{-1}$, where $\Sigma_{t|t-1} = U_tU_t^T$ is the Cholesky decomposition. This transforms the uncertainty distribution of the robot position to a Gaussian distribution with zero mean and unit variance, which is a unit sphere in Euclidean space centered at the origin. The spherical symmetry simplifies the task of constructing a nonconservative convex region of free space around the distribution of the position of the robot (Fig.\ \ref{fig:convexification}).
+
+We construct the convex region using a sequential process. We consider the closest point on the obstacle geometry from the origin. The linear truncation constraint $\mathbf{a}_i^T\mathbf{p}_{t|t-1} \leq b_i$, is defined by the normal to the vector of closest approach to the obstacle. We then prune away all geometry that lies in the infeasible half space $\mathbf{a}_i^T \mathbf{p}_{t|t-1} > b_i$ of the constraint, and continue the process by considering the closest point on the remaining obstacle geometry to the origin. This procedure is repeated until all geometry has been pruned away. It is important to note that our convexification method works in a greedy fashion and is not guaranteed to find the least conservative convex bounding region.
+
+%In our implementation, we assume that the obstacles are defined in a piecewise linear fashion using either line segments in $\mathbb{R}^2$, or polygons in $\mathbb{R}^3$. Instead of performing a linear-time search by iterating over all obstacles, we use a BSP tree \cite{Book:Berg08} data structure to determine obstacles within the given search radius, in logarithmic time. We only consider obstacles that are contained within $3$ standard deviations of the distribution (corresponding to a distance of $3$ units from the origin in the transformed environment).

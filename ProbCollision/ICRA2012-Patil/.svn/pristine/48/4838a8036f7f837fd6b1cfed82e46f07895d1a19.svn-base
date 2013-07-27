@@ -1,0 +1,370 @@
+@string{icra = "Proc. IEEE Int. Conf. Robotics and Automation (ICRA)"}
+
+@string{isrr = "Int. Symp. on Robotics Research"}
+
+@string{iros = "IEEE/RSJ Int. Conf. on Intelligent Robots and Systems"}
+
+@string{rss  = "Proc. Robotics: Science and Systems (RSS)"}
+
+@string{wafr = "Proc. Workshop Algorithmic Foundations of Robotics (WAFR)"}
+
+@string{biorob = {Int. Conf. Biomedical Robotics and Biomechatronics (BioRob)}}
+
+@string{tra = "IEEE Trans. on Robotics and Automation"}
+
+@string{tro = "IEEE Trans. on Robotics"}
+
+@string{jra = "IEEE Journal of Robotics and Automation"}
+
+@string{ijrr = "Int. Journal of Robotics Research"}
+
+%% Motion Planning and Manipulation of Deformable Objects
+@book{Book:LaValle06,
+  author = {S. M. LaValle},
+  title = {Planning Algorithms},
+  year = {2006},
+  publisher = {Cambridge University Press},
+  address = {Cambridge, U.K.},
+  note = {{A}vailable at http://planning.cs.uiuc.edu}
+}
+
+@book{Book:Choset05,
+  author       = {H. Choset and K. M. Lynch and S. Hutchinson and G. Kantor and W. Burgard and L. E. Kavraki and S. Thrun},
+  title        = {Principles of Robot Motion: Theory, Algorithms, and Implementations},
+  publisher    = {MIT Press},
+  address      = {Cambridge, MA},
+  year         = {2005}
+}
+
+@phdthesis{Thesis:Alterovitz06,
+  author = {R. Alterovitz},
+  title = {Planning and Optimization Algorithms for Image-Guided Medical Procedures},
+  school = {University of California, Berkeley},
+  year = {2006}
+}
+
+@book{Book:Alterovitz08,
+  author = {R. Alterovitz and K. Goldberg},
+  title = {Motion Planning in Medicine: Optimization and Simulation Algorithms for Image-Guided Procedures},
+  publisher = {Springer},
+  volume = {50},
+  year = {2008},
+  month = {July},
+}
+
+@inproceedings{Alterovitz07_RSS,
+  author = {R. Alterovitz and T. Simeon and K. Goldberg},
+  title = {The Stochastic Motion Roadmap: A sampling framework for planning with {M}arkov motion uncertainty},
+  booktitle = rss,
+  year = {2007},
+}
+
+@book{Book:Bertsekas01,
+  author = {D. Bertsekas},
+  title = {Dynamic programming and optimal control},
+  publisher = {Athena Scientic},
+  year = {2001}
+}
+
+@book{Book:Stengel94,
+  author = {R. F. Stengel},
+  title = {Optimal Control and Estimation},
+  publisher = {Dover Publications},
+  year = {1994}
+}
+
+@book{Book:Johnson94,
+  author = {N. L. Johnson and S. Kotz and N. Balakrishnan},
+  title = {Continuous univariate distributions},
+  volume = {1},
+  publisher = {John Wiley \& Sons},
+  year = {1994}
+}
+
+@book{Book:Berg08,
+  author = {M. {de Berg} and O. Cheong and M. {van Kreveld} and M. Overmars},
+  title = {Computational Geometry: Algorithms and Applications},
+  publisher = {Springer-Verlag},
+  year = {2008},
+  edition = {3}
+}
+
+@book{Book:Simon06,
+  author = {D. Simon},
+  title = {Optimal State Estimation: Kalman, H-infinity, and Nonlinear Approaches},
+  publisher = {John Wiley \& Sons},
+  year = {2006}
+}
+
+@book{Book:Thrun05,
+  author = {S. Thrun and W. Burgard and D. Fox},
+  title = {Probabilistic Robotics},
+  publisher = {MIT Press},
+  year = {2005}
+}
+
+@book{Book:Rasmussen06,
+  author = {C. E. Rasmussen and C. K. I. Williams},
+  title = {Gaussian Processes for Machine Learning},
+  publisher = {MIT Press},
+  year = {2006}
+}
+
+@inproceedings{Burns07_ICRA,
+  author = {B. Burns and O. Brock},
+  title = {Sampling-based motion planning with sensing uncertainty},
+  booktitle = icra,
+  pages = {3313--3318},
+  year = {2007}
+}
+
+@inproceedings{Guibas08_WAFR,
+  author = {L. Guibas and D. Hsu and H. Kurniawati and E. Rehman},
+  title = {Bounded uncertainty roadmaps for path planning},
+  booktitle = wafr,
+  year = {2008}
+}
+
+@inproceedings{Huynh09_ICRA,
+  author = {V. Huynh and N. Roy},
+  title = {{icLQG}: combining local and global optimization for control in information space},
+  booktitle = icra,
+  pages = {2851--2858},
+  year = {2009}
+}
+
+@inproceedings{Kewlani09_IROS,
+  author = {G. Kewlani and G. Ishigami and K. Iagnemma},
+  title = {Stochastic mobility-based path planning in uncertain environments},
+  booktitle = iros,
+  pages = {1183--1189},
+  year = {2009}
+}
+
+@inproceedings{Pepy06_IROS,
+  author = {R. Pepy and A. Lambert},
+  title = {Safe path planning in an uncertain-configuration space using {RRT}},
+  booktitle = iros,
+  pages = {5376--5381},
+  year = {2006}
+}
+
+@inproceedings{Kaelbling98_AI,
+  author = {L. Kaelbling and M. Littman and A. Cassandra},
+  title = {Planning and acting in partially observable stochastic domains},
+  booktitle = {Artificial Intelligence},
+  volume = {101},
+  pages = {99--134},
+  year = {1998}
+}
+
+@inproceedings{Roy99_ICRA,
+  author = {N. Roy and W. Burgard and D. Fox and S. Thrun},
+  title = {Coastal navigation - mobile robot navigation with uncertainty in dynamic environments},
+  booktitle = icra,
+  pages = {35--40},
+  year = {1999}
+}
+
+@inproceedings{Kurniawati08_RSS,
+  author = {H. Kurniawati and D. Hsu and W. Lee},
+  title = {{SARSOP}: Efficient point-based {POMDP} planning by approximating optimally reachable belief spaces},
+  booktitle = rss,
+  year = {2008}
+}
+
+@inproceedings{Patil11_RSS,
+  author = {S. Patil and J. {van den Berg} and R. Alterovitz},
+  title = {Motion planning under uncertainty in highly deformable environments},
+  booktitle = rss,
+  year = {2011}
+}
+
+@techreport{Welch95_TR,
+  author = {G. Welch and G. Bishop},
+  title = {An introduction to the Kalman filter},
+  institution = {Univ. North Carolina at Chapel Hill},
+  year = {1995}
+}
+
+@unpublished{Movellan11_Tutorial,
+  author = {J. R. Movellan},
+  title = {{Discrete Time Kalman Filters and Smoothers}},
+  note = {{MPLab Tutorials, Univ. California at San Diego}},
+  year = {2011}
+}
+
+@inproceedings{duToit10_ICRA,
+  author = {N. E. {du Toit} and J. W. Burdick},
+  title = {Robotic Motion Planning in Dynamic, Cluttered, Uncertain Environments},
+  booktitle = icra,
+  pages = {966--973},
+  year = {2010}
+}
+
+@inproceedings{Todorov05_ACC,
+  author = {E. Todorov and W. Li},
+  title = {A generalized iterative LQG method for locally-optimal feedback control of constrained nonlinear stochastic systems},
+  booktitle = {Proc. American Control Conference},
+  year = {2005},
+  pages = {300--306}
+}
+
+@inproceedings{vandenBerg11_IJRR,
+  author = {J. {van den Berg} and P. Abbeel and K. Goldberg},
+  booktitle = ijrr,
+  title = {{LQG-MP}: Optimized Path Planning for Robots with Motion Uncertainty and Imperfect State Information},
+  volume = {30},
+  number = {7},
+  pages = {895--913},
+  year = {2011}
+}
+
+@inproceedings{vandenBerg10_WAFR,
+  author = {J. {van den Berg} and S. Patil and R. Alterovitz and P. Abbeel and K. Goldberg},
+  booktitle = wafr,
+  pages = {373--389},
+  title = {{LQG}-Based Planning, Sensing, and Control of Steerable Needles},
+  year = {2010}
+}
+
+@inproceedings{vandenBerg11_ISRR,
+  author = {J. {van den Berg} and S. Patil and R. Alterovitz},
+  booktitle = isrr,
+  title = {Motion Planning under Uncertainty using Differential Dynamic Programming in Belief Space},
+  year = {2011}
+}
+
+@inproceedings{Tedrake09_RSS,
+  author = {R. Tedrake},
+  title = {{LQR}-Trees: Feedback motion planning on sparse randomized trees},
+  booktitle = rss,
+  year = {2009}
+}
+
+@inproceedings{Platt10_RSS,
+  author = {R. Platt and R. Tedrake and L. Kaelbling and T. Lozano-Perez},
+  title = {Belief space planning assuming maximum likelihood observations},
+  booktitle = rss,
+  year = {2010}
+}
+
+@inproceedings{Bry11_ICRA,
+   author = {A. Bry and N. Roy},
+   title = {Rapidly-exploring Random Belief Trees for Motion Planning Under Uncertainty},
+   booktitle = icra,
+   year = {2011}
+}
+
+@article{Webster10_IJRR,
+   author = {R. J. Webster and B. A. Jones},
+   title = {Design and Kinematic Modeling of Constant Curvature Continuum Robots: A Review},
+   journal = ijrr,
+   year = {2010}
+}
+
+@article{Prentice09_IJRR,
+   author = {S. Prentice and N. Roy},
+   title = {The belief roadmap: Efficient planning in belief space by factoring the covariance},
+   journal = ijrr,
+   volume = {28},
+   number = {11--12},
+   pages = {1448--1465},
+   year = 2009
+}
+
+@article{Thrun10_CACM,
+   author = {S. Thrun},
+   title = {Toward robotic cars},
+   journal = {Communications of the ACM},
+   volume = {53},
+   issue = {4},
+   year = {2010},
+   pages = {99--106}
+}
+
+@inproceedings{Erez10_UAI,
+   author = {T. Erez and W. D. Smart},
+   title = {{A Scalable Method for Solving High-Dimensional Continuous POMDPs Using Local Approximation}},
+   booktitle = {Conf. on Uncertainty in Artificial Intelligence},
+   year = {2010}
+}
+
+@inproceedings{Vitus11_ICRA,
+   author = {M. P. Vitus and C. J. Tomlin},
+   title = {Closed-Loop Belief Space Planning for Linear, Gaussian Systems},
+   booktitle = icra,
+   year = {2011}
+}
+
+@inproceedings{Blackmore09_GNCC,
+   author = {L. Blackmore and M. Ono},
+   title = {Convex Chance Constrained Predictive Control without Sampling},
+   booktitle = {Proc. AIAA Guidance, Navigation, and Control Conf.},
+   year = {2009}
+}
+
+@inproceedings{Candido11_ICRA,
+   author = {S. Candido and S. Hutchinson},
+   title = {{Minimum Uncertainty Robot Navigation Using Information-guided POMDP Planning}},
+   booktitle = icra,
+   year = {2011}
+}
+
+@phdthesis{Thesis:Greytak09,
+   author = {M. Greytak},
+   title = {Integrated Motion Planning and Model Learning for Mobile Robots with Application to Marine Vehicles},
+   school = {Massachusetts Institute of Technology},
+   year = {2009}
+}
+
+@inproceedings{Toussaint09_NIPS,
+   author = {M. Toussaint},
+   title = {Pros and Cons of truncated {G}aussian {EP} in the context of {A}pproximate {I}nference {C}ontrol.},
+   booktitle = {NIPS Workshop on Probabilistic Approaches for Robotics and Control},
+   year = {2009}
+}
+
+@inproceedings{Toussaint09_ICML,
+   title = {Robot trajectory optimization using approximate inference},
+   author = {M. Toussaint},
+   booktitle = {Proc. Int. Conf. on Machine Learning},
+   pages = {1049--1056},
+   year = {2009}
+}
+
+@article{duToit11_TRO,
+   author = {N. E. {du Toit} and J. W. Burdick},
+   title = {Probabilistic Collision Checking With Chance Constraints},
+   journal = {IEEE Trans. Robotics},
+   volume = {27},
+   issue = {4},
+   year = {2011},
+   pages = {809--815}
+}
+
+@inproceedings{Lambert06_ICARV,
+   title={A fast Monte Carlo algorithm for collision probability estimation},
+   author={A. Lambert and D. Gruyer and G. St Pierre},
+   booktitle={Int. Conf. on Control, Automation, Robotics and Vision (ICARV)},
+   pages={406--411},
+   year = {2006}
+}
+
+@inproceedings{Karaman10_RSS,
+   title = {Incremental sampling-based algorithms for optimal motion planning},
+   author = {S. Karaman and E. Frazzoli},
+   booktitle = rss,
+   year={2010}
+}
+
+
+@incollection{Cowan2011_Chapter,
+	Author = {Noah J. Cowan and Ken Goldberg and Gregory S. Chirikjian and Gabor Fichtinger and Ron Alterovitz and Kyle B. Reed and Vinutha Kallem and Wooram Park and Sarthak Misra and Allison M. Okamura},
+	Booktitle = {Surgical Robotics: System Applications and Visions},
+	Chapter = {23},
+	Editor = {Jacob Rosen and Blake Hannaford and Richard M. Satava},
+	Pages = {557--582},
+	Publisher = {Springer},
+	Title = {Robotic Needle Steering: Design, Modeling, Planning, and Image Guidance},
+	Year = {2011}}

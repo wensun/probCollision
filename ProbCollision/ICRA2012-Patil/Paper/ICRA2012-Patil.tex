@@ -1,0 +1,74 @@
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}
+
+\IEEEoverridecommandlockouts
+
+\overrideIEEEmargins
+
+\usepackage{graphicx}
+\usepackage{algorithm}
+%\usepackage{algorithmic}
+\usepackage{algorithmwh}
+\usepackage{xspace}
+\usepackage{amssymb}
+
+\usepackage[center]{subfigure}
+\usepackage{multirow}
+\usepackage{mathptmx}
+\usepackage{times}
+\usepackage{mathptmx}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+\DeclareSymbolFont{largesymbols}{OMX}{cmex}{m}{n}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{overpic}
+
+\title{\LARGE \bf
+%On the Probability of Collision of a Plan\\ under Motion and Sensing Uncertainty
+Estimating Probability of Collision for Safe Motion Planning \\ under Gaussian Motion and Sensing Uncertainty
+}
+
+\author{Sachin Patil \and Jur van den Berg \and Ron Alterovitz% <-this % stops a space
+\thanks{This research was supported in part by the National Science Foundation (NSF) under awards \#IIS-0905344 and \#IIS-1117127 and by the National Institutes of Health (NIH) under grant \#R21EB011628.}
+\thanks{Sachin Patil and Ron Alterovitz are with Department of Computer Science, University of North Carolina at Chapel Hill, Chapel Hill, NC, USA.
+       {\tt\small \{sachin, ron\}@cs.unc.edu}}%
+\thanks{Jur van den Berg is with the School of Computing, University of Utah, Salt Lake City, UT, USA.
+       {\tt\small berg@cs.utah.edu}}%
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+\input{abstract}
+
+\section{Introduction} \label{sec:intro}
+\input{introduction}
+
+\section{Previous Work} \label{sec:prevwork}
+\input{prevwork}
+
+%\section{Problem Statement} \label{sec:problem}
+%\input{problem}
+
+\section{Estimating Probability of Collision} \label{sec:probcol}
+\input{probcol}
+
+\section{Local Convexification of Free Space} \label{sec:cvxfn}
+\input{cvxfn}
+
+\section{Results} \label{sec:results}
+\input{results}
+
+\section{Conclusion and Future Work} \label{sec:discussion}
+\input{conclusion}
+
+\bibliographystyle{IEEEtranS}
+\bibliography{ICRA2012-Patil}
+
+\input{appendix}
+
+\end{document} 

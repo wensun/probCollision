@@ -1,0 +1,17 @@
+% !TEX root =  ICRA2012-Patil.tex
+
+We consider a robot operating in an environment that may contain obstacles. The stochastic dynamics of the robot follow a given discrete-time model:
+\begin{equation} \label{eq:dynmodel}
+\mathbf{x}_{t} = \mathbf{f}[\mathbf{x}_{t-1}, \mathbf{u}_{t-1}, \mathbf{m}_t], ~ \mathbf{m}_t \sim \mathcal{N} [\mathbf{0}, M_t]
+\end{equation}
+where $\mathbf{x}_t \in \mathcal{X} \subset \mathbb{R}^{n_x}$ is the state of the robot at stage $t$, $\mathbf{u}_t \in \mathbb{R}^{n_u}$ is the applied control input, and $\mathbf{m}_t$ is zero-mean Gaussian noise with variance $M_t$ that models the motion uncertainty. During execution of a plan, partial and noisy sensor measurements of the robot state are available according to a given stochastic model:
+\begin{equation}\label{eq:obsmodel}
+\mathbf{z}_t = \mathbf{h}[\mathbf{x}_t, \mathbf{n}_t], ~ \mathbf{n}_t \sim \mathcal{N}[\mathbf{0}, N_t]
+\end{equation}
+where $\mathbf{z}_t \in \mathbb{R}^{n_z}$ is the measurement obtained at time $t$ and $\mathbf{n}_t$ is the zero-mean Gaussian noise with variance $N_t$ that models the sensing uncertainty.
+
+Since our method serves as an evaluation metric, we assume the existence of a nominal plan computed by an RRT or other method as discussed in Sec.\ \ref{sec:prevwork}. The nominal plan is defined by $[\mathbf{x}^{\star}_{0}, \mathbf{u}^{\star}_{0}, \hdots, \mathbf{x}^{\star}_{\ell}, \mathbf{u}^{\star}_{\ell}]$ where $\mathbf{x}^{\star}_{t} = \mathbf{f}[\mathbf{x}^{\star}_{t-1}, \mathbf{u}^{\star}_{t-1}, \mathbf{0}]$ for $0 < t \leq \ell$, where $\ell$ is the number of discrete stages in the plan. The nominal plan is consistent with the dynamics model if there were no motion uncertainty. During actual execution of the plan, the robot will likely deviate from the nominal plan due to motion uncertainty and inaccurate estimation of the robot state due to sensing uncertainty.
+
+To compensate for uncertainty, we assume the robot executes the plan in a closed-loop fashion using a feedback controller and state estimator framework \cite{Book:Stengel94}. We assume the existence of a linear feedback control law that operates on the estimate of the robot state and aims to keep the robot close to the nominal plan. Several feedback controllers, such as the linear quadratic regulator (LQR) and the proportional integral derivative (PID) controller fall in this category and are compatible with our method \cite{Book:Stengel94}. We also assume that a Kalman filter is used for state estimation during execution, which is the minimum mean square error estimator for linear, Gaussian systems. Several variants of the Kalman filter such as the extended filter (EKF), unscented filter (UKF), and the ensemble filter (EnKF) \cite{Book:Simon06} are compatible with our method.
+
+Given Gaussian models of motion and sensing uncertainty, a description of the obstacles in the environment, a nominal motion plan, and associated feedback controller and state estimator, the objective is to compute the probability of collision of a given plan. It is important to note that our method can be directly used for estimating the a priori distributions of the robot's state over time with hard state constraints, which is a key step in several optimization based methods for motion planning under uncertainty. 

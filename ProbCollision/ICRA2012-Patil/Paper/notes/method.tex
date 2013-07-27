@@ -1,0 +1,64 @@
+\documentclass[letterpaper]{article}
+
+\usepackage[cm,plain]{fullpage}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+
+%\title{}
+
+%\author{}
+%\date{}
+
+%\maketitle
+
+\vspace{-30pt}
+%\noindent{\bf{\large Preliminaries}}:
+%
+%State vector: $\mathbf{x}_t \in \mathbb{R}^n$, control input vector: $\mathbf{u}_t \in \mathbb{R}^m$, and observation vector: $\mathbf{z}_t \in \mathbb{R}^o$.
+%
+%Stochastic dynamics model: $\mathbf{x}_t = \mathbf{f}[\mathbf{x}_{t-1}, \mathbf{u}_{t-1}, \mathbf{m}_t], ~ \mathbf{m}_t \sim \mathcal{N} [\mathbf{0}, M_t]$.
+%
+%Stochastic observation model: $\mathbf{z}_t = \mathbf{h}[\mathbf{x}_t, \mathbf{n}_t], ~ \mathbf{n}_t \sim \mathcal{N} [\mathbf{0}, N_t]$.
+%
+%Path: $\Pi: (\mathbf{x}^{\star}_0, \mathbf{u}^{\star}_0, \mathbf{x}^{\star}_1, \mathbf{u}^{\star}_1, \ldots, \mathbf{x}^{\star}_{\ell}, \mathbf{u}^{\star}_{\ell}), ~ 0 \leq t \leq \ell$.
+%
+%Linearized stochastic dynamics and measurement model:
+%\vspace{-5pt}
+%\begin{align*}
+%\bar{\mathbf{x}}_t &= A_t\bar{\mathbf{x}}_{t-1} + B_t\bar{\mathbf{u}}_{t-1} + V_t\mathbf{m}_t, \\
+%\bar{\mathbf{z}}_t &= H_t\bar{\mathbf{x}}_{t} + W_t\mathbf{n}_t.
+%\end{align*}
+%
+%where $\bar{\mathbf{x}}_t = (\mathbf{x}_t - \mathbf{x}^{\star}_t)$, $\bar{\mathbf{u}}_t = (\mathbf{u}_t - \mathbf{u}^{\star}_t)$, $\bar{\mathbf{z}}_t = (\mathbf{z}_t - \mathbf{h}[\mathbf{x}^{\star}_t, \mathbf{0}])$, $A_t = \frac{\partial\mathbf{f}}{\partial\mathbf{x}}[\mathbf{x}^{\star}_{t-1}, \mathbf{u}^{\star}_{t-1},\mathbf{0}],~ B_t = \frac{\partial\mathbf{f}}{\partial\mathbf{u}}[\mathbf{x}^{\star}_{t-1}, \mathbf{u}^{\star}_{t-1},\mathbf{0}],$
+%
+%$V_t = \frac{\partial\mathbf{f}}{\partial\mathbf{m}}[\mathbf{x}^{\star}_{t-1}, \mathbf{u}^{\star}_{t-1},\mathbf{0}],~ H_t = \frac{\partial\mathbf{h}}{\partial\mathbf{x}}[\mathbf{x}^{\star}_{t}, \mathbf{0}],~ W_t = \frac{\partial\mathbf{h}}{\partial\mathbf{n}}[\mathbf{x}^{\star}_{t}, \mathbf{0}].$
+%
+%Linear feedback policy: $\bar{\mathbf{u}}_t = L_t\bar{\mathbf{x}}_{t}$.
+%
+%\vspace{10pt}
+\noindent{\bf{\large Method}}:
+
+\begin{enumerate}
+\item Initialize: $\hat{\mathbf{y}}_0 = \widehat{\bigl[ \begin{smallmatrix} \bar{\mathbf{x}}_0 \\ \hat{\mathbf{x}}_0 \end{smallmatrix} \bigr]} = \mathbf{0}_{2n \times 1}, ~ R_0 = \mathrm{Var} \bigl[ \begin{smallmatrix} \bar{\mathbf{x}}_0 \\ \hat{\mathbf{x}}_0 \end{smallmatrix} \bigr] = \bigl[ \begin{smallmatrix} P_0&0\\0&0 \end{smallmatrix} \bigr]_{2n \times 2n}$.
+\item Propagate: $\hat{\mathbf{y}}_t = F_t\hat{\mathbf{y}}_{t-1}, ~ R_t = F_t R_{t-1}F_t^T + G_t Q_t G_t^T, ~ 0 < t \leq \ell,$ \\ \\ where $F_t = \begin{bmatrix} A_t & B_t L_t\\ K_t H_t A_t & A_t + B_t L_t - K_t H_t A_t \end{bmatrix}$, $G_t = \begin{bmatrix} V_t & 0\\ K_t H_t V_t & K_t W_t \end{bmatrix}$, and $Q_t = \begin{bmatrix} M_t & 0\\ 0 & N_t \end{bmatrix}$.
+\item Truncate: 
+\begin{enumerate}
+\item Determine the set of all obstacles in the workspace that potentially intersect the distribution $\mathcal{N}[\mathbf{p}_t, \Sigma_t]$, where the vector $\mathbf{p}_t \in \mathbb{R}^s$ comprises of the corresponding spatial dimensions of the state vector $\mathbf{y}_t = \hat{\mathbf{y}}_t + \bigl[ \begin{smallmatrix} \mathbf{x}^{\star}_t \\ \mathbf{x}^{\star}_t \end{smallmatrix} \bigr]$, and $\Sigma_t$ is the marginal distribution over the spatial dimensions of the distribution $\mathcal{N}[\hat{\mathbf{y}}_t, R_t]$.
+\item Each obstacle in the potentially intersecting set, $\mathcal{O}_i, i = 0, \ldots, k$, defines a feasible half-space defined by the tuple $(\mathbf{a}_i, b_i)$, where $\mathbf{a}_i \in \mathbb{R}^s$ is a unit vector normal to the obstacle defined such that $\mathbf{a}_i \mathbf{p}_t \leq b_i$.
+\item Truncate the joint distribution $\mathcal{N}[\mathbf{y}_t, R_t]$ against the hyperplane $(\tilde{\mathbf{a}}_i, b_i)$, where $\tilde{\mathbf{a}}_i = [\mathbf{a}_i, 0, \ldots, 0]^T$ is a hyperplane in $\mathbb{R}^{2n}$ that is degenerate in all dimensions except the spatial dimensions.
+    
+    Applying an affine transformation $\mathbf{y}'_t = \tilde{\mathbf{a}}_i^T\mathbf{y}_t$ transforms the distribution $\mathcal{N}[\mathbf{y}_t, R_t]$ to a one-dimensional Gaussian distribution $\mathcal{N}[\tilde{\mathbf{a}}_i^T\mathbf{y}_t, \tilde{\mathbf{a}}_i^T R_t \tilde{\mathbf{a}}_i]$ along an axis that is normal to the hyperplane $(\tilde{\mathbf{a}}_i, b_i)$. The problem now simplifies to truncating the one-dimensional Gaussian distribution at a specified upper bound given by $b_i$, which is well-known from standard literature. Let $\mu$ and $\sigma^2$ be the truncated mean and variance of the transformed distribution.
+    
+    The truncated mean of the original distribution are then given by: $\tilde{\mathbf{y}}_t = \mathbf{y}_t + \sum\limits_{i = 0}^{k} \frac{R_t\tilde{\mathbf{a}}_i}{\tilde{\mathbf{a}}_i^T R_t \tilde{\mathbf{a}}_i}(\mu - \tilde{\mathbf{a}}_i^T\mathbf{y}_t)$ and the truncated variance is given by: $\tilde{R}_t = R_t + \sum\limits_{i = 0}^{k} \frac{R_t\tilde{\mathbf{a}}_i}{\tilde{\mathbf{a}}_i^T R_t \tilde{\mathbf{a}}_i}(\sigma^2 - \tilde{\mathbf{a}}_i^T\mathbf{y}_t\tilde{\mathbf{a}}_i)\frac{\tilde{\mathbf{a}}_i^TR_t^T}{\tilde{\mathbf{a}}_i^T R_t \tilde{\mathbf{a}}_i}$. The term $\frac{R_t\tilde{\mathbf{a}}_i}{\tilde{\mathbf{a}}_i^T R_t \tilde{\mathbf{a}}_i}$ gives the multiplicative \emph{gain} (similar to the gain term in the Kalman filter measurement update equations) that scales the correction to be applied to the mean $\mathbf{y}_t$ and the variance $R_t$ of the original distribution.
+\item The mean of the joint distribution is now given by: $\hat{\mathbf{y}}_{t} = (\tilde{\mathbf{y}}_t - \bigl[ \begin{smallmatrix} \mathbf{x}^{\star}_t \\ \mathbf{x}^{\star}_t \end{smallmatrix} \bigr])$ and the variance given by: $R_t = \tilde{R}_t$.
+\end{enumerate}
+\item Repeat steps (2) and (3) till the end of the plan.
+\end{enumerate}
+
+\end{document} 

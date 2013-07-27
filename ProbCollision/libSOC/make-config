@@ -1,0 +1,14 @@
+#CXXFLAGS += -DMT_IMPLEMENT_TEMPLATES
+
+CXXFLAGS += -DMT_FREEGLUT
+
+CPATH    := $(CPATH):$(BASE)/include
+LPATH    := $(LPATH):$(BASE)/lib
+
+ifeq ($(OUTPUT),libsoc.so)
+CXXFLAGS += -DMT_LAPACK -DMT_FREEGLUT -DMT_SWIFT -DMT_QHULL
+LDFLAGS  +=
+LIBS     += -llapack -lblas -lglut -lGLU -lGL -lX11 -lSWIFT++ -lqhull
+CPATH    := $(CPATH):$(BASE)/include:$(BASE)/extern/SWIFT++_1.2/include
+LPATH    := $(LPATH):$(BASE)/lib:$(BASE)/extern/SWIFT++_1.2/lib
+endif

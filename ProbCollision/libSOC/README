@@ -1,0 +1,72 @@
+
+*** When using this library...
+
+please cite the paper:
+
+   Marc Toussaint (2009): Robot Trajectory Optimization using Approximate
+   Inference. 25nd International Conference on Machine Learning (ICML 2009). 
+
+please read the guide:
+
+   doc/guide.pdf
+
+
+
+*** Installation
+
+(1) On Debian, install the packages liblapack-dev, freeglut3-dev,
+    libqhull-dev, libf2c2-dev.
+
+(2) Try 'make' in the base directory.
+
+(3) If that didn't work: have a look in the make-config in the base
+    directory. Also have a look at the `Known issues' given below. If
+    linking with glut, lapack, swift, or qhull failed, remove the
+    respective -DMT_* flags in the make-config. If the linker
+    complained about undefined template function references, uncomment
+    the -DMT_IMPLEMENT_TEMPLATES entry in make-config (this will lead
+    to slow compilation when including my headers). If it still
+    doesn't work, contact me.
+
+(4) Try test/soc/x.exe
+
+(5) Briefly try all other tests in test/*/x.exe
+
+(6) Read the guide!
+
+
+
+*** Known issues:
+
+-- On older Ubuntu/Debian releases, the libf2c2-dev is not up to date
+   (version<10061008-4.1). Running the code might lead to seg faults
+   within the lapack library complaining about some fortran linking.
+
+-- For some libqhull-dev versions (unequal 2003.1-11) there is a
+   compiler error 'ors_qhull.cpp:324 ... is not a pointer'. Simply
+   change the -> to a .
+
+-- On some systems one needs to add `-lcblas' in make-generic:277
+
+
+
+*** GPL licence statement:
+
+    Copyright 2009 Marc Toussaint
+    email: mtoussai@cs.tu-berlin.de
+
+    This file is part of libSOC.
+
+    libSOC is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    libSOC is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with libSOC.  If not, see <http://www.gnu.org/licenses/>
+

@@ -1,0 +1,157 @@
+# this is a generic make file
+# supposed to be called from test and projects paths
+
+.PRECIOUS: %.o
+.PRECIOUS: %_wrap.cxx
+
+BASE := $(shell cd $(BASE);pwd)
+
+
+################################################################################
+#
+# optional user configuration
+#
+################################################################################
+
+-include $(BASE)/make-config
+
+
+################################################################################
+#
+# standard compiler options (debug, release, etc)
+#
+################################################################################
+
+ifndef OPTIM
+OPTIM = debug#(leave no space!)
+endif
+
+ifeq ($(OPTIM),debug)
+CXXFLAGS := -g -Wall $(CXXFLAGS)
+endif
+ifeq ($(OPTIM),fast_debug)
+CXXFLAGS := -g -O3 -Wall $(CXXFLAGS)
+endif
+ifeq ($(OPTIM),penibel)
+CXXFLAGS := -g -Wall -Wextra $(CXXFLAGS)
+endif
+ifeq ($(OPTIM),ddd)
+CXXFLAGS := -g -Wall -fno-default-inline $(CXXFLAGS)
+endif
+ifeq ($(OPTIM),fast)
+CXXFLAGS := -O3 -Wall -DMT_NOCHECK $(CXXFLAGS)
+endif
+ifeq ($(OPTIM),prof)
+CXXFLAGS := -O3 -pg -Wall -DMT_NOCHECK -fno-default-inline $(CXXFLAGS)
+LDFLAGS += -pg
+endif
+ifeq ($(OPTIM),callgrind)
+CXXFLAGS := -O3 -g -Wall -DMT_NOCHECK $(CXXFLAGS) -fno-default-inline
+endif
+
+LINK = $(CXX)
+SHAREFLAG = -shared #-Wl,--warn-unresolved-symbols #-Wl,--no-allow-shlib-undefined
+MOC = moc
+UIC = uic
+
+################################################################################
+#
+# export include/lib paths
+#
+################################################################################
+LD_RUN_PATH += $(LPATH)
+export CPATH
+export LPATH
+export LD_RUN_PATH
+export INCLUDE
+export LIB
+
+
+################################################################################
+#
+# standard make targets
+#
+################################################################################
+
+default: $(OUTPUT)
+
+clean:
+	rm -f $(OUTPUT) $(OBJS) callgrind.out.* $(CLEAN)
+
+info: force
+	@echo; echo ----------------------------------------
+	@echo "     " "environment configuration (see make-generic file)";
+	@echo ----------------------------------------; echo
+	@echo "  SYS =" "$(SYS)"
+	@echo "  PWD =" "$(PWD)"
+	@echo "  BASE =" "$(BASE)"
+	@echo "  LIBPATH =" "$(LIBPATH)"
+	@echo "  EXTERNALS =" "$(EXTERNALS)"
+	@echo "  CXX =" "$(CXX)"
+	@echo "  CXXFLAGS =" "$(CXXFLAGS)"
+	@echo "  LINK =" "$(LINK)"
+	@echo "  LDFLAGS =" "$(LDFLAGS)"
+	@echo "  SEP =" "$(SEP)"
+	@echo "  CPATH =" "$(CPATH)"
+	@echo "  CPLUS_INCLUDE_PATH =" "$(CPLUS_INCLUDE_PATH)"
+	@echo "  STDINC =" "$(STDINC)"
+	@echo "  LPATH =" "$(LPATH)"
+	@echo "  LD_RUN_PATH =" "$(LD_RUN_PATH)"
+	@echo "  INCLUDE =" "$(INCLUDE)"
+	@echo "  LIB =" "$(LIB)"
+	@echo "  OBJS =" "$(OBJS)"
+	@echo "  OUTPUT =" "$(OUTPUT)"
+	@echo
+
+
+################################################################################
+#
+# rules
+#
+################################################################################
+
+%.exe: $(OBJS)
+	$(LINK) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $($(SYS)Libs)
+
+%.so: $(OBJS)
+	$(LINK) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $($(SYS)Libs) $(SHAREFLAG)
+	chmod a+rx $@
+
+%.lib: $(OBJS)
+	$(LINK) $(LDFLAGS) -o $@ $(OBJS) #$(LIBS) $($(SYS)Libs) $(SHAREFLAG)
+	chmod a+rx $@
+
+%.a: $(OBJS)
+	ar -crvs $@ $(OBJS)
+
+%.mexglx: $(OBJS)
+	mex -cxx $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $($(SYS)Libs)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
+
+%.o: %.cxx
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
+
+%.obj: %.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
+
+%.obj: %.cxx
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
+
+%_wrap.cxx: %.i
+	swig $(SWIGFLAGS) -c++ $<
+
+%_ui.h: %.ui
+	$(UIC) -o $*_ui.h $<
+
+%_moc.cpp: %.h
+	$(MOC) -o $*_moc.cpp $*.h
+
+%_$(SYS).moccpp: %.h
+	cd $(*D); $(MOC) -o $(*F)_$(SYS).moccpp $(<F)
+
+%_$(SYS).moccpp: %.h force
+	cd $(*D); $(MOC) -o $(*F)_$(SYS).moccpp $(<F)
+
+force:	;

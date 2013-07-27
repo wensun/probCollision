@@ -1,0 +1,97 @@
+\documentclass[letterpaper]{article}
+
+\usepackage[in,plain]{fullpage}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage{subfigure}
+
+\usepackage{hyperref}
+\usepackage{url}
+
+\linespread{1.3}
+
+\let\oldthebibliography=\thebibliography
+\let\endoldthebibliography=\endthebibliography
+\renewenvironment{thebibliography}[1]{%
+  \begin{oldthebibliography}{#1}%
+    \setlength{\parskip}{0ex}%
+    \setlength{\itemsep}{0ex}%
+}%
+{%
+  \end{oldthebibliography}%
+}
+
+\begin{document}
+
+\title{\vspace{-20pt} Notes}
+
+\author{}
+\date{}
+
+\maketitle
+
+\vspace{-20pt}
+\noindent{\bf{\large Preliminaries}}:
+
+Consider the following discrete-time, non-linear, stochastic dynamics and measurement model:
+\begin{align}
+\mathbf{x}_{t} &= \mathbf{f}[\mathbf{x}_{t-1}, \mathbf{u}_{t-1}, \mathbf{m}_t], ~~ \mathbf{m}_t \sim \mathcal{N} [\mathbf{0}, M_t] \label{eq:dynmodel} \\
+\mathbf{z}_t &= \mathbf{h}[\mathbf{x}_t, \mathbf{n}_t], ~~~~~~~~~~~~~~ \mathbf{n}_t \sim \mathcal{N}[\mathbf{0}, N_t]. \label{eq:obsmodel}
+\end{align}
+
+Given a nominal motion plan $\Pi: [\mathbf{x}^{\star}_{0}, \mathbf{u}^{\star}_{0}, \ldots, \mathbf{x}^{\star}_{t},\mathbf{u}^{\star}_{t},\ldots, \mathbf{x}^{\star}_{\ell},\mathbf{u}^{\star}_{\ell}], \mathbf{x}^{\star}_{0} = \mathbf{x}_{\mathrm{start}}, \mathbf{x}^{\star}_{\ell} \in \mathcal{X}_{\mathrm{goal}}$, we can linearize the dynamics and measurement model in terms of the state deviation $\bar{\mathbf{x}}_t = (\mathbf{x}_t - \mathbf{x}^{\star}_{t})$, control input deviation $\bar{\mathbf{u}}_t = (\mathbf{u}_t - \mathbf{u}^{\star}_{t})$ and measurement deviation $\bar{\mathbf{z}}_t = (\mathbf{z}_t - \mathbf{h}[\mathbf{u}^{\star}_{t}, \mathbf{0}])$ as:
+\begin{align}
+\bar{\mathbf{x}}_t &= A_t\bar{\mathbf{x}}_{t-1} + B_t\bar{\mathbf{u}}_{t-1} + V_t\mathbf{m}_t, ~~ \mathbf{m}_t \sim \mathcal{N} [\mathbf{0}, M_t] \label{eq:lindynmodel} \\
+\bar{\mathbf{z}}_t &= H_t\bar{\mathbf{x}}_{t} + W_t\mathbf{n}_t, ~~~~~~~~~~~~~~~~~~~ \mathbf{n}_t \sim \mathcal{N} [\mathbf{0}, N_t]. \label{eq:linobsmodel}
+\end{align}
+where the appropriate Jacobians are defined as:
+\begin{displaymath}
+A_t = \frac{\partial\mathbf{f}}{\partial\mathbf{x}}[\mathbf{x}^{\star}_{t-1}, \mathbf{u}^{\star}_{t-1},\mathbf{0}],~ B_t = \frac{\partial\mathbf{f}}{\partial\mathbf{u}}[\mathbf{x}^{\star}_{t-1}, \mathbf{u}^{\star}_{t-1},\mathbf{0}],~ V_t = \frac{\partial\mathbf{f}}{\partial\mathbf{m}}[\mathbf{x}^{\star}_{t-1}, \mathbf{u}^{\star}_{t-1},\mathbf{0}],~ H_t = \frac{\partial\mathbf{h}}{\partial\mathbf{x}}[\mathbf{x}^{\star}_{t}, \mathbf{0}],~ W_t = \frac{\partial\mathbf{h}}{\partial\mathbf{n}}[\mathbf{x}^{\star}_{t}, \mathbf{0}].
+\end{displaymath}
+
+To compensate for uncertainty, we assume that the system is controlled using a linear feedback control policy proportional to the state deviation $\bar{\mathbf{x}}_t$:
+\begin{equation}
+\bar{\mathbf{u}}_t = L_t\bar{\mathbf{x}}_{t}.
+\label{eq:controlpolicy}
+\end{equation}
+The true state $\mathbf{x}_t$, and hence the true state deviation $\bar{\mathbf{x}}_t$, is not available during actual execution. We use a Kalman filter to keep track of a Gaussian estimate of the state deviation $\hat{\mathbf{x}}_t = \mathrm{E}[\bar{\mathbf{x}}_t]$, and associated variance $\hat{\Sigma}_t = \mathrm{Var}[\bar{\mathbf{x}}_t]$, during plan execution i.e., $\bar{\mathbf{x}}_t \sim \mathcal{N}[\hat{\mathbf{x}}_t, \hat{\Sigma}_t]$. The revised control policy in terms of the estimate is now given by $\bar{\mathbf{u}}_t = L_t\hat{\mathbf{x}}_{t}$.
+
+The Kalman filter continually performs two steps in an interleaved fashion. A process step first predicts the state deviation and associated variance at the next time-step as:
+\begin{align}
+\hat{\mathbf{x}}^{-}_{t} &= A_t \hat{\mathbf{x}}_{t-1} + B_t \bar{\mathbf{u}}_{t-1} \label{eq:KalmanProcessA}\\
+\hat{\Sigma}^{-}_{t} &= A_t \hat{\Sigma}_{t-1} A_t^T + V_t M_t V_t^T, \label{eq:KalmanProcessB}
+\end{align}
+and a measurement update step that adjusts the prediction and incorporates new information from measurements into the variance as:
+\begin{align}
+K_t &= \hat{\Sigma}^{-}_{t} H_t^T (H_t\hat{\Sigma}^{-1}_t H_t^T + W_t N_t W_t^T)^{-1} \label{eq:KalmanMeasurementA}\\
+\hat{\mathbf{x}}_t &= \hat{\mathbf{x}}^{-}_{t} + K_t(\bar{\mathbf{z}}_t - H_t \hat{\mathbf{x}}^{-}_{t}) \label{eq:KalmanMeasurementB}\\
+\hat{\Sigma}_t &= \hat{\Sigma}^{-}_{t} - K_t H_t \hat{\Sigma}^{-}_{t}. \label{eq:KalmanMeasurementC}
+\end{align}
+
+\noindent{\bf{\large A Priori Belief Propagation}}:
+
+For motion planning under uncertainty, it is important to be able to characterize a priori, the uncertainty in the true state, $\mathbf{x}_t$ (or equivalently, true state deviation $\bar{\mathbf{x}}_t$), of the system. While $\hat{\Sigma}_t$ does represent the uncertainty in the state deviation $\bar{\mathbf{x}}_t$, it also assumes that the mean $\hat{\mathbf{x}}_t$ is already available based on the measurements obtained during execution. Since the measurements are not available prior to plan execution, an exact estimate $\hat{\mathbf{x}}_t$ is indeterminable. One could incorrectly assume that the obtained measurement would be the same as the nominal state along the plan (maximum likelihood assumption), in which case, $\hat{\mathbf{x}}_t = \mathbf{0}$ and $\hat{\Sigma}_t$ is the uncertainty in the true state. This leads to an underestimation of the true uncertainty, which can result in computation of unsafe motion plans under uncertainty.
+
+A more principled approach is to consider all possible $\hat{\mathbf{x}}_t$ that could be realized during plan execution. From equations \ref{eq:linobsmodel}, \ref{eq:KalmanProcessA}, and \ref{eq:KalmanMeasurementB}, it follows that estimate $\hat{\mathbf{x}}_t$ is normally distributed i.e., $\hat{\mathbf{x}}_t \sim \mathcal{N}[\mu_t, \Gamma_t]$. Following the derivation of \cite{Bry11}, the expectation of the estimate, $\mathrm{E}[\hat{\mathbf{x}}_t]$, is computed using Eqn. \ref{eq:KalmanMeasurementB} as:
+\begin{equation}
+\mu_t = \mathrm{E}[\hat{\mathbf{x}}_t] 
+= \mathrm{E}[\hat{\mathbf{x}}^{-}_{t}] + K_t H_t(\mathrm{E}[\bar{\mathbf{x}}_{t}] - \mathrm{E}[\hat{\mathbf{x}}^{-}_{t}])
+\end{equation}
+Using equations \ref{eq:lindynmodel}, \ref{eq:controlpolicy}, and \ref{eq:KalmanProcessA}, the expectations of the true state deviation $\mathrm{E}[\bar{\mathbf{x}}_{t}]$ and predicted estimate $\mathrm{E}[\hat{\mathbf{x}}^{-}_{t}]$ are given by:
+\begin{align}
+\mathrm{E}[\bar{\mathbf{x}}_{t}] &= A_t\mathrm{E}[\bar{\mathbf{x}}_{t-1}] + B_t L_{t-1}\mathrm{E}[\hat{\mathbf{x}}_{t-1}] \label{eq:exptrue} \\
+\mathrm{E}[\hat{\mathbf{x}}^{-}_{t}] &= A_t\mathrm{E}[\hat{\mathbf{x}}_{t-1}] + B_t L_{t-1}\mathrm{E}[\hat{\mathbf{x}}_{t-1}] \label{eq:exppred}
+\end{align}
+Since the initial state is known exactly i.e., $\mathrm{E}[\hat{\mathbf{x}}_0] = \mathrm{E}[\bar{\mathbf{x}}_0] = \mathbf{0}$, it follows from induction that $\mathrm{E}[\hat{\mathbf{x}}_t] = \mathrm{E}[\hat{\mathbf{x}}^{-}_{t}] = \mathrm{E}[\bar{\mathbf{x}}_{t}] =  \mathbf{0} ~ \forall t \in [0,\ell]$.
+
+\begin{thebibliography}{99.}
+\bibitem{Bry11} A. Bry, N. Roy. Rapidly-exploring Random Belief Trees for Motion Planning Under Uncertainty. \emph{IEEE Int. Conf. on Robotics and Automation}, 2011. \url{http://groups.csail.mit.edu/rrg/papers/abry_icra11.pdf}
+
+\end{thebibliography}
+
+\end{document} 
